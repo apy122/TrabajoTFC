@@ -1,10 +1,12 @@
 //Aqui va la clase Usuario
 class Usuario {
-    constructor(id, nombre, apellido, email,) {
+    constructor(id, nombre, apellido, email,turno) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.turno = turno;
+
     }
 
     getId() {
@@ -31,5 +33,10 @@ class Usuario {
     setEmail(email) {
         this.email = email;
     }
-    
+    getTurno() {
+        return this.turno;
+    }
+    setTurno(turno) {
+        this.turno = turno;
+    }
 }
