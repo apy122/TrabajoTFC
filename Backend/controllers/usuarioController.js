@@ -3,13 +3,13 @@
 //funciones para manejar la logica de usuario
 import { leerJson, escribirJson } from "../utils/manejoArchivos.js";
 
-function crearUsuario() {
+export async function crearUsuario() {
     //escribir JSON
 }
-function listarUsuarios(){
+export async function listarUsuarios(){
     //lista usuarios activos
 }
-function eliminarUsuarioExpirado(){
+export async function eliminarUsuarioExpirado(){
     //elimina usuarios expirados
 }
 export { crearUsuario, listarUsuarios, eliminarUsuarioExpirado };
