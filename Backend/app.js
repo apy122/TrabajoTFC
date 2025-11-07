@@ -12,6 +12,7 @@ dotenv.config();
 function configurarFrontend(app, rutaFrontendRelativa) {
   //obtener la ruta actual
   const __filename = fileURLToPath(import.meta.url);
+  //convertir url en ruta normal
   const __dirname = path.dirname(__filename);
 
   //convertir a  ruta absoluta del frontend
@@ -58,5 +59,5 @@ function iniciarServidor() {
   });
 }
 
-// --- EJECUTAR ---
+//ejecucion
 iniciarServidor();
