@@ -1,12 +1,14 @@
 //Aqui va la clase Usuario
 class Usuario {
-    constructor(id, nombre, apellido, email,turno) {
+    constructor(id, nombre, apellido, email,rol, puesto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.turno = turno;
-
+        //Rol usuario, trabajador o jefe
+        this.rol = rol;
+        //Puesto asignado al usuario, trabajador o jefe
+        this.puesto = puesto;
     }
 
     getId() {
@@ -34,9 +36,16 @@ class Usuario {
         this.email = email;
     }
     getTurno() {
-        return this.turno;
+        return this.rol;
     }
-    setTurno(turno) {
-        this.turno = turno;
+    setTurno(rol) {
+        this.rol = rol;
+    }
+    getPuesto() {
+        return this.puesto;
+    }
+    setPuesto(puesto) {
+        this.puesto = puesto;
     }
 }
+export default Usuario;
