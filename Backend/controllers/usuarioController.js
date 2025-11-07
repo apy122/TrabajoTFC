@@ -1,9 +1,5 @@
 //Logica de usuario
 
-//importar variables env
-import dotenv from "dotenv";
-dotenv.config();
-
 //funciones para manejar la logica de usuario
 import { leerJson, escribirJson } from "../utils/manejoArchivos.js";
 
