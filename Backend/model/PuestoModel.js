@@ -1,4 +1,4 @@
-class puestos{
+class Puestos{
     constructor(id, nombre, categoria, posicionTurno, jefe, productos = [], turnos = []) {
         this.id = id;
         this.nombre = nombre;
@@ -53,7 +53,7 @@ class puestos{
     }
     agregarProducto(nombre, descripcion, precio, stock) {
         const nuevoProducto = {
-            id: this.productos.length + 1,
+            id: Date.now(this.productos)+1,
             nombre,
             descripcion,
             precio,
@@ -70,8 +70,18 @@ class puestos{
             producto.stock = nuevoStock;
         }
     }
+    //sumar turno
     sumarTurno(turno) {
         this.turnos.push(turno);
     }
+    //Asignar a usuario un turno
+    asignarTurno(usuario) {
+        const nuevoTurno = {
+            id: Date.now(),
+            usuarioId: usuario.id,
+            fecha: new Date()
+        };
+        this.turnos.push(nuevoTurno);
+        return nuevoTurno;
+    }
 }
-export default puestos;
