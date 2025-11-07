@@ -1,4 +1,4 @@
-class Puestos{
+class Puesto{
     constructor(id, nombre, categoria, posicionTurno, jefe, productos = [], turnos = []) {
         this.id = id;
         this.nombre = nombre;
@@ -60,6 +60,9 @@ class Puestos{
             stock
         };
         this.productos.push(nuevoProducto);
+    }
+    buscarProducto(idProducto){
+        return this.productos.find(producto => producto.id === idProducto);
     }
     eliminarProducto(productoId) {
         this.productos = this.productos.filter(producto => producto.id !== productoId);
