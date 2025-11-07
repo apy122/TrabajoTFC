@@ -1,8 +1,4 @@
 import PuestoModel from '../models/PuestoModel.js';
-//importar variables env
-import dotenv from "dotenv";
-dotenv.config();
-
 
 //Funciones del puesto
 export async function crearPuesto() {
