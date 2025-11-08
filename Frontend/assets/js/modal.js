@@ -1,3 +1,4 @@
+import bootstrap from "./utils/bootstrap.js";
 export function crearModal(){
   //obtener contenedor
   const contenedorModal = document.getElementById('modal');
