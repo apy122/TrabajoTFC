@@ -51,40 +51,4 @@ class Puesto{
     setTurnos(turnos) {
         this.turnos = Array.isArray(turnos) ? turnos : [];
     }
-    agregarProducto(nombre, descripcion, precio, stock) {
-        const nuevoProducto = {
-            id: Date.now(this.productos)+1,
-            nombre,
-            descripcion,
-            precio,
-            stock
-        };
-        this.productos.push(nuevoProducto);
-    }
-    buscarProducto(idProducto){
-        return this.productos.find(producto => producto.id === idProducto);
-    }
-    eliminarProducto(productoId) {
-        this.productos = this.productos.filter(producto => producto.id !== productoId);
-    }
-    actualizarStock(productoId, nuevoStock) {
-        const producto = this.productos.find(producto => producto.id === productoId);
-        if (producto) {
-            producto.stock = nuevoStock;
-        }
-    }
-    //sumar turno
-    sumarTurno(turno) {
-        this.turnos.push(turno);
-    }
-    //Asignar a usuario un turno
-    asignarTurno(usuario) {
-        const nuevoTurno = {
-            id: Date.now(),
-            usuarioId: usuario.id,
-            fecha: new Date()
-        };
-        this.turnos.push(nuevoTurno);
-        return nuevoTurno;
-    }
 }
