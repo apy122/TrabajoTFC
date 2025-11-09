@@ -1,5 +1,4 @@
 import PuestoModel from '../models/PuestoModel.js';
-
 //Funciones del puesto
 export async function crearPuesto() {
 }
