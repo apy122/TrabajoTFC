@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 //cargar variables .env
 dotenv.config();
 
-//configuracion frontend
+//cargar pagina principal
 function configurarFrontend(app, rutaFrontendRelativa) {
   //obtener la ruta actual
   const __filename = fileURLToPath(import.meta.url);
@@ -31,6 +31,7 @@ function configurarFrontend(app, rutaFrontendRelativa) {
 
 //configurar Servidor
 function configurarServidor() {
+  //levantar servidor
   const app = express();
 
   //middleware para parsear JSON en peticiones HTTP
