@@ -9,7 +9,7 @@ conexion();
 
 // Crear servidor
 const app = express();
-const port = process.env.puerto
+const port = dotenv.env.puerto
 
 // Configurar CORS
 app.use(cors());
