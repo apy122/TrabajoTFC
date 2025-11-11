@@ -1,10 +1,11 @@
 // Importar dependencias
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv"
 
 // Crear servidor
 const app = express();
-const port = 3000;
+const port = process.env.puerto
 
 // Configurar CORS
 app.use(cors());
