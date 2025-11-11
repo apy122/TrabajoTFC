@@ -1,64 +1,43 @@
-// --- IMPORTACIONES ---
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
+// Importar dependencias
+const express = require("express");
+const cors = require("cors");
 
-//cargar variables .env
-dotenv.config();
+// Crear servidor
+const app = express();
+const port = 3000;
 
-//cargar pagina principal
-function configurarFrontend(app, rutaFrontendRelativa) {
-  //obtener la ruta actual
-  const __filename = fileURLToPath(import.meta.url);
-  //convertir url en ruta normal
-  const __dirname = path.dirname(__filename);
+// Configurar CORS
+app.use(cors());
 
-  //convertir a  ruta absoluta del frontend
-  const rutaFrontend = path.resolve(__dirname, "..", rutaFrontendRelativa);
+// Convertir datos del body a objetos
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-  //servir archivos estáticos
-  app.use(express.static(rutaFrontend));
+// Cargar rutas (más adelante se añaden con app.use('/api', rutas))
 
-  //capturar el index en la carpeta
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(rutaFrontend, "index.html"));
-  });
+// Endpoint de prueba
+app.get("/",(req, res)=>{
+    console.log("ruta raiz llamada");
+    return res.status(200).send(
+        {
+            curso: "hola",
+            mensaje: "Easter egg"
+        }
+    )
+    
 
-  console.log(`Cargado el index.html`);
-}
+})
+app.get("/pruebas", (req, res)=>{
+    console.log("Ejecutada endpoint de prueba");
+    return res.status(200).send(
+        `<section>
+            <h1>Bienvenido</h1>
+        </section>`
+    )
+    
+})
 
-//configurar Servidor
-function configurarServidor() {
-  //levantar servidor
-  const app = express();
-
-  //middleware para parsear JSON en peticiones HTTP
-  app.use(express.json());
-
-  //middleware para permitir peticiones desde el Frontend
-  app.use(cors());
-
-  //aquí rutas de los apis
-  
-
-  //configurar frontend
-  configurarFrontend(app, process.env.FRONT_URL);
-
-  console.log("Servidor configurado correctamente");
-  return app;
-}
-
-//iniciar servidor
-function iniciarServidor() {
-  const app = configurarServidor();
-  const PORT = process.env.PUERTO || 3000;
-
-  app.listen(PORT, () => {
-    console.log(`Corriendo Servidor`);
-  });
-}
-
-//ejecucion
-iniciarServidor();
+// Servidor en escucha
+app.listen(port, () => {
+  console.log("Servidor corriendo correctamente en el puerto: " + port);
+});
