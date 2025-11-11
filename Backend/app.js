@@ -2,6 +2,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv"
+import {conexion} from "./database/Conexion"
+
+//conexion a donde toca
+conexion();
 
 // Crear servidor
 const app = express();
