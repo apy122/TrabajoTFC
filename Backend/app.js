@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 // Crear servidor
 const app = express();
 const port = process.env.puerto
+
 // Configurar CORS
 app.use(cors());
 
