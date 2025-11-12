@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 // Cargar rutas (más adelante se añaden con app.use('/api', rutas))
 
 // Endpoint de prueba
+// endpoint en raiz
 app.get("/",(req, res)=>{
     console.log("ruta raiz llamada");
     return res.status(200).send(
@@ -32,6 +33,7 @@ app.get("/",(req, res)=>{
     
 
 })
+//endpoint en /pruebas
 app.get("/pruebas", (req, res)=>{
     console.log("Ejecutada endpoint de prueba");
     return res.status(200).send(
