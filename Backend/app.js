@@ -33,6 +33,7 @@ app.get("/",(req, res)=>{
     
 
 })
+//endpoint en /pruebas
 app.get("/pruebas", (req, res)=>{
     console.log("Ejecutada endpoint de prueba");
     return res.status(200).send(
