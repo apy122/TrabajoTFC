@@ -1,4 +1,6 @@
 //Aqui se conecta con lo que queramos
-const conexion= async()=>{
+export const conexion= async()=>{
 
 }
+
+export default conexion
