@@ -7,7 +7,6 @@ class Puesto{
         this.jefe = jefe;
         // Asegurarse de que productos y turnos sean siempre arrays
         this.productos = Array.isArray(productos) ? productos : [];
-        this.turnos = Array.isArray(turnos) ? turnos : [];
     }
     getId() {
         return this.id;

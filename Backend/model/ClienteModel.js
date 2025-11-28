@@ -1,5 +1,5 @@
 //Aqui va la clase Usuario
-class Usuario {
+class Cliente {
     constructor(id, nombre, apellido, email, puesto){
         this.id= id
         this.nombre = nombre;
@@ -40,4 +40,4 @@ class Usuario {
         this.puesto = puesto;
     }
 }
-export default Usuario;
+export default Cliente;

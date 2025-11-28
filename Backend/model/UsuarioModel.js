@@ -1,6 +1,6 @@
 import Usuario from "./UsuarioModel";
 
-class Trabajador extends Usuario {
+class Usuario extends Usuario {
     constructor(nombre, apellidos, email, telefono, rol, puesto) {
         super(nombre, apellidos, email);
         this.telefono = telefono;
@@ -32,4 +32,4 @@ class Trabajador extends Usuario {
     }
 }
 
-export default Trabajador;
+export default Usuario;
