@@ -5,8 +5,6 @@ class Puesto{
         this.categoria = categoria;
         this.posicionTurno = posicionTurno;
         this.jefe = jefe;
-        // Asegurarse de que productos y turnos sean siempre arrays
-        this.productos = Array.isArray(productos) ? productos : [];
     }
     getId() {
         return this.id;
@@ -37,12 +35,6 @@ class Puesto{
     }
     setJefe(jefe) {
         this.jefe = jefe;
-    }
-    getProductos() {
-        return this.productos;
-    }
-    setProductos(productos) {
-        this.productos = Array.isArray(productos) ? productos : [];
     }
     getTurnos() {
         return this.turnos;
