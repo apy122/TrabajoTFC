@@ -45,11 +45,6 @@ app.get("/pruebas", (req, res)=>{
     )
 })
 
-// Servidor en escucha
-app.listen(port, () => {
-  console.log("Servidor corriendo correctamente en el puerto: " + port);
-});
-
 //endpoint en /pruebas
 app.get("/pruebas", (req, res)=>{
     console.log("Ejecutada endpoint de prueba");
