@@ -1,35 +1,34 @@
-import Usuario from "./UsuarioModel";
-
-class Usuario extends Usuario {
-    constructor(nombre, apellidos, email, telefono, rol, puesto) {
-        super(nombre, apellidos, email);
-        this.telefono = telefono;
-        this.rol= rol;
-        this.puesto = puesto;
-    }
-
-    // Getters y setters
-    getTelefono() {
-        return this.telefono;
-    }
-
-    setTelefono(telefono) {
-        this.telefono = telefono;
-    }
-    getRol(){
-        return this.rol
-    }
-    setRol(rol){
-        this.rol= rol;
-    }
-
-    getPuesto() {
-        return this.puesto;
-    }
-
-    setPuesto(puesto) {
-        this.puesto = puesto;
-    }
+class UsuarioModel{
+   constructor(id, nombre, email, fk_puesto, jefe){
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.fk_puesto = fk_puesto;
+   }   
+   getId(){
+        return this.id;
+   }
+   setId(id){
+        this.id = id;
+   }
+   getNombre(){
+        return this.nombre;
+   }
+   setNombre(nombre){
+        this.nombre = nombre;
+   }
+   getEmail(){
+        return this.email;
+   }
+   setEmail(email){
+        this.email = email;
+   }
+   getFkPuesto(){
+        return this.fk_puesto;
+   }
+   setFkPuesto(fk_puesto){
+        this.fk_puesto = fk_puesto;
+   }
 }
 
-export default Usuario;
+export default UsuarioModel;

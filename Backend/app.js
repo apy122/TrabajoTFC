@@ -1,19 +1,21 @@
 // Importar dependencias
 import express from "express";
 import cors from "cors";
-import { config } from "dotenv"; // <-- CAMBIO 1: Importar 'config'
-//import {conexion} from "./database/Conexion.js"
+import  dotenv from "dotenv";
+import conexion from "./database/Conexion.js";
+import PuestoRoutes from "./routes/PuestoRoutes.js";
+import router from "./routes/PuestoRoutes.js";
 
 // Ejecutar la configuración de dotenv para cargar el .env
-config();
+dotenv.config();
 // conexion a donde toca
-//conexion();
+conexion();
 
 // Crear servidor
 const app = express();
 
 // Acceder al puerto usando process.env.PUERTO
-const port = process.env.puerto // <-- CAMBIO 2: Acceder vía process.env
+const port = process.env.puerto
 
 // Configurar CORS
 app.use(cors());
@@ -22,39 +24,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Cargar rutas (más adelante se añaden con app.use('/api', rutas))
 
-// Endpoint de prueba
-app.get("/",(req, res)=>{
-    console.log("ruta raiz llamada");
-    return res.status(200).send(
-        {
-            curso: "hola",
-            mensaje: "Easter egg"
-        }
-    )
-})
-
-//endpoint en /pruebas
-app.get("/pruebas", (req, res)=>{
-    console.log("Ejecutada endpoint de prueba");
-    return res.status(200).send(
-        `<section>
-            <h1>Bienvenido</h1>
-        </section>`
-    )
-})
-
-//endpoint en /pruebas
-app.get("/pruebas", (req, res)=>{
-    console.log("Ejecutada endpoint de prueba");
-    return res.status(200).send(
-        `<section>
-            <h1>Bienvenido</h1>
-        </section>`
-    )
-    
-})
+// Endpoint de prueba real
+app.use('/puestos/puestosZona', PuestoRoutes.router);
 
 // Servidor en escucha
 app.listen(port, () => {
