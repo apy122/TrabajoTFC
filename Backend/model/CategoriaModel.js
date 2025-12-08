@@ -17,3 +17,5 @@ class CategoriaModel{
    }
 }
 export default CategoriaModel;
+
+//flfgk
