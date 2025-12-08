@@ -1,45 +1,40 @@
-class Puesto{
-    constructor(id, nombre, categoria, posicionTurno, jefe, productos = [], turnos = []) {
+class PuestoModel{
+   constructor(id, nombre, fk_categoria, fk_mercado, fk_cliente, jefe){
         this.id = id;
         this.nombre = nombre;
-        this.categoria = categoria;
-        this.posicionTurno = posicionTurno;
-        this.jefe = jefe;
-    }
-    getId() {
+        this.fk_categoria = fk_categoria;
+        this.fk_mercado = fk_mercado;
+        this.fk_cliente = fk_cliente;
+   }   
+   getId(){
         return this.id;
-    }
-    setId(id) {
+   }
+   setId(id){
         this.id = id;
-    }
-    getNombre() {
+   }
+   getNombre(){
         return this.nombre;
-    }
-    setNombre(nombre) {
+   }
+   setNombre(nombre){
         this.nombre = nombre;
-    }
-    getCategoria() {
-        return this.categoria;
-    }
-    setCategoria(categoria) {
-        this.categoria = categoria;
-    }
-    getPosicionTurno() {
-        return this.posicionTurno;
-    }
-    setPosicionTurno(posicionTurno) {
-        this.posicionTurno = posicionTurno;
-    }
-    getJefe() {
-        return this.jefe;
-    }
-    setJefe(jefe) {
-        this.jefe = jefe;
-    }
-    getTurnos() {
-        return this.turnos;
-    }
-    setTurnos(turnos) {
-        this.turnos = Array.isArray(turnos) ? turnos : [];
-    }
+   }
+   getFkCategoria(){
+        return this.fk_categoria;
+   }
+   setFkCategoria(fk_categoria){
+        this.fk_categoria = fk_categoria;
+   }
+   getFkMercado(){
+        return this.fk_mercado;
+   }
+   setFkMercado(fk_mercado){
+        this.fk_mercado = fk_mercado;
+   }
+   getFkCliente(){
+        return this.fk_cliente;
+   }
+   setFkCliente(fk_cliente){
+        this.fk_cliente = fk_cliente;
+   }
 }
+export default PuestoModel;

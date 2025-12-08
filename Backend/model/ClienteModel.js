@@ -1,43 +1,34 @@
 //Aqui va la clase Usuario
-class Cliente {
-    constructor(id, nombre, apellido, email, puesto){
-        this.id= id
+class ClienteModel{
+   constructor(id, nombre, apellido, email){
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        //Puesto asignado al usuario, trabajador o jefe
-        this.puesto = puesto;
     }
-
-    getId() {
+    getid(){
         return this.id;
-    }
-    setId(id) {
+    }CategoriaModel
+    setid(id){
         this.id = id;
     }
-    getNombre() {
+    getnombre(){
         return this.nombre;
     }
-    setNombre(nombre) {
+    setnombre(nombre){
         this.nombre = nombre;
-    }
-    getApellido() {
+   }
+   getapellido(){
         return this.apellido;
     }
-    setApellido(apellido) {
+    setapellido(apellido){
         this.apellido = apellido;
-    }
-    getEmail() {
+   }
+   getemail(){
         return this.email;
     }
-    setEmail(email) {
+    setemail(email){
         this.email = email;
-    }
-    getPuesto() {
-        return this.puesto;
-    }
-    setPuesto(puesto) {
-        this.puesto = puesto;
-    }
+   }
 }
-export default Cliente;
+export default ClienteModel;

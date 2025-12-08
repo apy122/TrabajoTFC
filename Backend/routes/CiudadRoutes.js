@@ -1,5 +1,5 @@
 import express from 'express';
-import UsuarioController from '../controllers/UsuarioController.js';
+import CiudadController from '../controllers/CiudadController.js';
 export const router = express.Router();
 
 //definir rutas

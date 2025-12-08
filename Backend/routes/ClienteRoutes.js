@@ -1,5 +1,5 @@
 import express from 'express';
-import UsuarioController from '../controllers/UsuarioController.js';
+import ClienteController from '../controllers/ClienteController.js';
 export const router = express.Router();
 
 //definir rutas
