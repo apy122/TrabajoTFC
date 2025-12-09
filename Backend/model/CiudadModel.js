@@ -1,19 +1,6 @@
-class CiudadModel{
-    constructor(id, nombre){
-        this.id=id;
-        this.nombre=nombre;
-    }
-    getId(){
-        return this.id;
-    }
-    setId(id){
-        this.id=id;
-    }
-    getNombre(){
-        return this.nombre;
-    }
-    setNombre(nombre){
-        this.nombre=nombre;
-    }
-}
-export default CiudadModel;
+import { Sequelize } from "sequelize";
+
+const ciudad= Sequelize.define('ciudad',{
+    id:{type: Sequelize.SMALLINT, primarykey: true},
+    nombre: Sequelize.STRING
+});

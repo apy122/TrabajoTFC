@@ -16,4 +16,4 @@ class CategoriaModel{
         this.nombre = nombre;
    }
 }
-export default CategoriaModel;
+export default CategoriaModel;categoria
