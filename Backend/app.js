@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { conexion } from "./database/Conexion.js";
 import PuestoRoutes from "./routes/PuestoRoutes.js";
 import router from "./routes/PuestoRoutes.js";
+import CiudadRoutes from "./routes/CiudadRoutes.js";
 
 // Ejecutar la configuración de dotenv para cargar el .env
 dotenv.config();
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Endpoint de prueba real
 app.use("/puestos/puestosZona", PuestoRoutes.router);
+app.use("/ciudad/ciudadTest", CiudadRoutes.router)
 
 // Servidor en escucha
 app.listen(port, () => {

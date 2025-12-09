@@ -13,4 +13,6 @@ const dialectType = process.env.dialect;
 export const conexion = new Sequelize(database, user, password, {
   host: hostType,
   dialect: dialectType,
+  logging: console.log,
 });
+export default conexion
