@@ -1,21 +1,16 @@
-import dotenv from "dotenv"
-import mysql from "mysql"
+import dotenv from "dotenv";
+import Sequelize from "sequelize";
 
 dotenv.config();
 //Aqui se conecta con lo que queramos
-export const conexion= async()=>{
-    try{
-         const trueCon=await mysql.createConnection({
-        host: process.env.host,
-        user: process.env.user,
-        password: process.env.password
-        })
-        console.log("conexion establecida")
-        return trueCon    
-    
-    }catch(error){
-        console.log(error)
-        throw new Error("No se pudo conectar con la base de datos")
-    }
-}
-export default conexion;
+const database = process.env.database;
+const user = process.env.user;
+const password = process.env.password;
+const hostType = process.env.host;
+const dialectType = process.env.dialect;
+
+//Iniciamos sequilize
+export const conexion = new Sequelize(database, user, password, {
+  host: hostType,
+  dialect: dialectType,
+});
