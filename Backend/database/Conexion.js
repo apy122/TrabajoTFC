@@ -23,4 +23,3 @@ export const conexion = new Sequelize(basedatos, usuario, contrasena, {
   
 });
 
-export default conexion;
