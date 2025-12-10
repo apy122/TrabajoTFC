@@ -1,1 +1,0 @@
-import UsuarioModel from '../models/UsuarioModel.js';

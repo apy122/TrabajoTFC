@@ -1,8 +1,0 @@
-import express from 'express';
-import UsuarioController from '../controllers/UsuarioController.js';
-export const router = express.Router();
-
-//definir rutas
-
-
-//exportar rutas
