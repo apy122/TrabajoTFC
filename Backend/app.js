@@ -21,7 +21,7 @@ try {
 const app = express();
 
 // Acceder al puerto usando process.env.PUERTO
-const port = process.env.puerto;
+const port = process.env.port;
 
 // Configurar CORS
 app.use(cors());

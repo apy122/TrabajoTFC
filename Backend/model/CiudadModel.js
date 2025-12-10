@@ -1,9 +1,6 @@
 // ...existing code...
-import dotenv from "dotenv";
 import { DataTypes } from "sequelize";
 import conexion from "../database/Conexion.js";
-
-dotenv.config();
 
 export const ciudadModel = conexion.define(
   "ciudad",
@@ -18,13 +15,13 @@ export const ciudadModel = conexion.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-  
   },
   {
     tableName: "ciudad",
     freezeTableName: true, 
-    timestamps: false,}
-);
+    timestamps: false,
+    schema: "public",
+  });
+
 
 export default ciudadModel;
-// ...existing code...
