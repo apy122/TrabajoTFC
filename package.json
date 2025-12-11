@@ -8,8 +8,6 @@
     "dev": "nodemon Backend/app.ts"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "cors": "^2.8.5",
@@ -26,6 +24,5 @@
   "devDependencies": {
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
->>>>>>> origin/Alvaro
   }
 }
