@@ -6,9 +6,74 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
 }
+
+model Categoria{
+  id Int @id @default(autoincrement())
+  nombre String
+  puesto Puesto[]
+}
+
+model Ciudad{
+  id Int @id @default(autoincrement())
+  nombre String
+  zona Zona[]
+}
+
+model Zona{
+  id Int @id @default(autoincrement())
+  nombre String
+  fk_ciudad Int
+  ciudad Ciudad @relation(fields:[fk_ciudad], references: [id])
+  mercado Mercado[]
+
+}
+model Mercado{
+  id Int @id @default(autoincrement())
+  nombre String
+  zona Zona @relation(fields:[fk_zona], references: [id])
+  fk_zona Int
+  puesto Puesto[]
+}
+
+model Puesto{
+  id Int @id @default(autoincrement())
+  nombre String
+  fk_categoria Int
+  categoria Categoria @relation(fields:[fk_categoria], references: [id])
+  mercado Mercado @relation(fields:[fk_mercado], references: [id])
+  fk_mercado Int
+  numeroatiende Int @default(0)
+  turno Turno[]
+}
+
+model Cliente{
+  id Int @id @default(autoincrement())
+  email String @unique
+  turno Turno[]
+}
+model Turno{
+  id Int @id @default(autoincrement())
+  numeroTicket Int @default(autoincrement())
+  
+  // Relación con Puesto 
+  fk_puesto Int
+  puesto Puesto @relation(fields:[fk_puesto], references: [id])
+  // Relación con Cliente
+
+  fk_cliente Int
+  cliente Cliente @relation(fields:[fk_cliente], references: [id])
+  
+  
+  hora_tomada DateTime @default(now())
+  fecha_emision DateTime @default(now()) @db.Date 
+
+  @@unique([fk_puesto, numeroTicket, fecha_emision])
+}
+
+
