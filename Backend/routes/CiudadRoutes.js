@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import express from 'express';
 import CiudadController from '../controllers/CiudadController.js';
 export const router = express.Router();
@@ -11,4 +9,3 @@ router.get('/', CiudadController.getCiudades)
 export default{
     router,
 }
->>>>>>> origin/Alvaro

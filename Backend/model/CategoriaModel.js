@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 class CategoriaModel{
    constructor(id, nombre){
         this.id = id;
@@ -19,4 +17,4 @@ class CategoriaModel{
    }
 }
 export default CategoriaModel;categoria
->>>>>>> origin/Alvaro
+

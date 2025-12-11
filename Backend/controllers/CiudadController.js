@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import {ciudadModel} from "../model/CiudadModel.js";
 
 export const getCiudades = async (req, res) => {
@@ -16,4 +14,3 @@ export const getCiudades = async (req, res) => {
 export default {
   getCiudades,
 };
->>>>>>> origin/Alvaro

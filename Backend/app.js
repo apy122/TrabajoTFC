@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 // Importar dependencias
 import express from "express";
 import cors from "cors";
@@ -40,4 +39,3 @@ app.use("/ciudad/ciudadTest", CiudadRoutes.router)
 app.listen(port, () => {
   console.log("Servidor corriendo correctamente en el puerto: " + port);
 });
->>>>>>> origin/Alvaro

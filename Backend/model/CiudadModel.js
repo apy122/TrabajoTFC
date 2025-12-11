@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // ...existing code...
 import { DataTypes } from "sequelize";
 import conexion from "../database/Conexion.js";
@@ -27,4 +25,3 @@ export const ciudadModel = conexion.define(
 
 
 export default ciudadModel;
->>>>>>> origin/Alvaro

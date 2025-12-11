@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 dotenv.config();
@@ -24,5 +22,3 @@ export const conexion = new Sequelize(basedatos, usuario, contrasena, {
   },
   
 });
-
->>>>>>> origin/Alvaro
