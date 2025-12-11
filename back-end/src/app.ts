@@ -1,21 +1,26 @@
-const dotenv = require("dotenv");
-dotenv.config();
-
-// carga de dependencias
-const express = require("express");
-const cors = require("cors");
+import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
 import type { Request, Response } from "express";
+
+// cargar variables de entorno
+dotenv.config();
+const port = process.env.puerto;
+
+//configuracion de cors
+/*const opcionesCors : cors.CorsOptions = {
+
+};*/
 
 
 const app = express();
-const port = process.env.puerto;
+
 
 // middlewares
-app.use(cors());
+app.use(cors(/*opcionesCors*/));
 app.use(express.json());
-
 // rutas
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (_req: Request, res: Response) => {
   res.send("API de gestión de tareas");
 });
 
