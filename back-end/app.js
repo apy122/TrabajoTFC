@@ -39,3 +39,4 @@ app.use("/ciudad/ciudadTest", CiudadRoutes.router)
 app.listen(port, () => {
   console.log("Servidor corriendo correctamente en el puerto: " + port);
 });
+//todo ok?
