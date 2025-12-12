@@ -50,6 +50,7 @@ model Puesto{
   fk_mercado Int
   numeroatiende Int @default(0)
   turno Turno[]
+  usuario Usuario[]
 }
 
 model Cliente{
@@ -61,10 +62,8 @@ model Turno{
   id Int @id @default(autoincrement())
   numeroTicket Int @default(autoincrement())
   
-  // Relación con Puesto 
   fk_puesto Int
   puesto Puesto @relation(fields:[fk_puesto], references: [id])
-  // Relación con Cliente
 
   fk_cliente Int
   cliente Cliente @relation(fields:[fk_cliente], references: [id])
@@ -76,4 +75,10 @@ model Turno{
   @@unique([fk_puesto, numeroTicket, fecha_emision])
 }
 
+model Usuario{
+  id Int @id @default(autoincrement())
+  Nombre String
+  fk_puesto Int
+  puesto Puesto @relation(fields:[fk_puesto], references: [id])
 
+}

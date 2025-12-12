@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
+  "type": "module",
   "scripts": {
     "dev": "ts-node src/app.ts",
     "watch": "nodemon --watch src --ext ts --exec ts-node src/app.ts"
