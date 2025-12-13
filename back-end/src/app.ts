@@ -8,21 +8,19 @@ dotenv.config();
 const port = process.env.puerto;
 
 //configuracion de cors
-/*const opcionesCors : cors.CorsOptions = {
-
-};*/
+const opcionesCors : cors.CorsOptions = {
+  origin: [process.env.cors_principal as string, process.env.cors_usuario as string, process.env.cors_admin as string],
+  methods: ["GET", "POST", "PUT", ],
+  allowedHeaders: ["Content-Type", "Authorization"]
+};
 
 
 const app = express();
 
 
 // middlewares
-app.use(cors(/*opcionesCors*/));
+app.use(cors(opcionesCors));
 app.use(express.json());
-// rutas
-app.get("/", (_req: Request, res: Response) => {
-  res.send("API de gestión de tareas");
-});
 
 // arrancar servidor
 app.listen(port, () => {
